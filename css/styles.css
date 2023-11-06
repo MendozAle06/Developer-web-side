@@ -22,11 +22,41 @@ body {
 }
 
 .titulo span {
-    font-size: 2rem;
+    font-size: 2rem;
 }
 
 .contenedor{
-    width: 120rem;
+    width: 120 rem;
     margin: 0 auto;
 }
 
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 2rem;
+
+}
+
+.navegacion-principal a {
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;   
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+@media (min-Width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+    }
+ }
+    
