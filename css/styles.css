@@ -8,7 +8,12 @@
 
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
     
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
 }
 
 body {
@@ -16,9 +21,18 @@ body {
     font-family: 'Krub', sans-serif;
 }
 
-.titulo { 
+/* tipografias*/
+h1{
+    font-size: 3.8 rem;
+}
+h2{
+    font-size: 2.8 rem;
+}
+h3{
+    font-size: 1.8 rem;
+}
+h1, h2, h3 {
     text-align: center;
-    font-size: 3.8rem;
 }
 
 .titulo span {
@@ -40,6 +54,7 @@ body {
     justify-content: space-between;
     font-weight: bold;
     font-size: 2rem;
+    align-items: center;
 
 }
 
@@ -59,4 +74,52 @@ body {
         flex-direction: row;
     }
  }
-    
+
+ /* Hero */
+ .hero{
+    background-image: url(../img/hero.jpg); /* ../ es para regresar un nivel de directorio*/
+    background-repeat: no-repeat; /*Para evitar que se repita la imagen si se expande loa pagina*/
+    background-size: cover; /*sirve para cubiri la imagen con todo el tamaño de la pantalla*/
+    height: 450px;
+    position: relative;/*El padre debe ser relativo*/
+ }
+
+ .contenido-hero {
+    position: absolute;/*El hijo debe ser absoluto*/
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    /*alinear vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .contenido-hero p, .contenido-hero h2{
+    color: var(--blanco);
+ }
+
+ .ubicacion{
+    display: flex;
+    align-items: flex-end;
+ }
+
+ .boton{
+    background-color: var(--secundario);/*color de fondo*/
+    text-decoration: none;/*quitar subrayado*/
+    padding: 1rem 3rem;/*espacio interior*/
+    border-radius: .5rem;/*esquinas redondas*/
+    color: var(--blanco);/*color de la letra*/
+    margin-top: 3rem;/*espacio exterior*/
+    font-weight: bold;/*en negritas*/
+    font-size: 2rem;/*tamaño de la letra*/
+    text-transform: uppercase;/*todas las letras en mayuscula*/
+    text-align: center;/*centrar texto*/
+    width: 90%;/*ancho del boton, que abarque el 90% si la pantalla es pequeña*/
+ }
+ @media (min-width: 768px){
+    .boton{
+        width: auto;
+    }
+ }
